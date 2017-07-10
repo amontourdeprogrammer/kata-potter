@@ -23,4 +23,9 @@ describe PriceCalculator do
     books = [1, 2, 2]
     expect(checkout(books)).to eql(2 * UNIT_PRICE * 0.95 + UNIT_PRICE)
   end
+
+  it "returns right price when user buys 3 copies of one book and another" do
+    books = [1, 2, 1, 2, 2]
+    expect(checkout(books)).to eql(4 * UNIT_PRICE * 0.95 + UNIT_PRICE)
+  end
 end
